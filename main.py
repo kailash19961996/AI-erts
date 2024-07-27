@@ -8,6 +8,11 @@ import threading
 st.title("AI-erts (AI Alerts)")
 st.write("Enter your question to get a real time information delivered directly to your whatsapp")
 
+@st.experimental_dialog("How to use this APP", width=1920)
+def show_video():
+    video_url = "https://www.youtube.com/watch?v=JH7lQWtaA60&feature=youtu.be"
+    st.video(video_url, loop=False, autoplay=True, muted=False)
+    
 perplexity_api_key = st.secrets["perplexity_api"]["api_key"]
 twilio_api_key = st.secrets["twilio_api"]["api_key"]
 twilio_sid = st.secrets["twilio_sid"]["sid"]
