@@ -12,7 +12,12 @@ st.write("Enter your question to get a real time information delivered directly 
 def show_video():
     video_url = "https://www.youtube.com/watch?v=JH7lQWtaA60&feature=youtu.be"
     st.video(video_url, loop=False, autoplay=True, muted=False)
-    
+
+c1,c2,c3 = st.columns(3)
+with c1:
+    if st.button('How to use this APP'):
+        show_video()
+        
 perplexity_api_key = st.secrets["perplexity_api"]["api_key"]
 twilio_api_key = st.secrets["twilio_api"]["api_key"]
 twilio_sid = st.secrets["twilio_sid"]["sid"]
