@@ -10,13 +10,14 @@ st.write("Enter your question to get a real time information delivered directly 
 
 perplexity_api_key = st.secrets["perplexity_api"]["api_key"]
 twilio_api_key = st.secrets["twilio_api"]["api_key"]
+twilio_sid = st.secrets["twilio_sid"]["sid"]
 
 # Initialize session state variables
 if 'thread' not in st.session_state:
     st.session_state.thread = None
 
 # Twilio credentials
-account_sid = 'ACe90242f44d61b05da1f1504a46808400'
+account_sid = twilio_sid
 auth_token = twilio_api_key
 twilio_number = '+14155238886'
 client = Client(account_sid, auth_token)
